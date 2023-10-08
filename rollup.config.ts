@@ -3,6 +3,7 @@ import typescript from '@rollup/plugin-typescript'
 import { glob } from 'glob'
 import type { RollupOptions } from 'rollup'
 import bookmarklet from 'rollup-plugin-bookmarklet'
+import dotenv from "rollup-plugin-dotenv"
 
 const entryPaths = glob.sync('src/**/main.ts')
 const configs: RollupOptions[] = entryPaths.map(entryPath => ({
@@ -14,7 +15,8 @@ const configs: RollupOptions[] = entryPaths.map(entryPath => ({
   plugins: [
     typescript(),
     terser(),
-    bookmarklet()
+    bookmarklet(),
+    dotenv(),
   ]
 }))
 
