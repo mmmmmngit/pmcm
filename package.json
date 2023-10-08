@@ -19,6 +19,7 @@
     "@types/glob": "^8.1.0",
     "@types/jest": "^29.5.5",
     "@types/node": "^16.18.55",
+    "dotenv": "^16.3.1",
     "eslint": "^8.50.0",
     "eslint-plugin-jest": "^27.4.2",
     "glob": "^10.3.10",
@@ -27,6 +28,7 @@
     "rimraf": "^5.0.5",
     "rollup": "^3.29.4",
     "rollup-plugin-bookmarklet": "^4.0.2",
+    "rollup-plugin-dotenv": "^0.5.0",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
