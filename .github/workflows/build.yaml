@@ -4,9 +4,6 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-env:
-  FRONT_JSON_URL: ${{ vars.FRONT_JSON_URL }}
-  PATH_ITEM_LIST: ${{ vars.PATH_ITEM_LIST }}
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -19,6 +16,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
+      - run: |
+          touch .env
+          echo FRONT_JSON_URL=${{ vars.FRONT_JSON_URL }} >> .env
+          echo PATH_ITEM_LIST=${{ vars.PATH_ITEM_LIST }} >> .env
 
       - run: npm ci
       - run: npm run build
