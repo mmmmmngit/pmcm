@@ -2,8 +2,11 @@ name: Node.js CI
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+  # pull_request:
+  #   branches: [main]
+env:
+  FRONT_JSON_URL: ${{ vars.FRONT_JSON_URL }}
+  PATH_ITEM_LIST: ${{ vars.PATH_ITEM_LIST }}
 jobs:
   build:
     runs-on: ubuntu-22.04
